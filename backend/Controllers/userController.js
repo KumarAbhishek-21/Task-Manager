@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import validator from "validator";
 
-// Create Token (Async)
+
 const createToken = (id) => {
   return new Promise((resolve, reject) => {
     jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "7d" }, (err, token) => {
@@ -13,7 +13,7 @@ const createToken = (id) => {
   });
 };
 
-// 🔹 **Login User**
+
 export const loginUser = async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -48,7 +48,7 @@ export const loginUser = async (req, res) => {
   }
 };
 
-// 🔹 **Register User**
+
 export const registerUser = async (req, res) => {
   const { name, email, password } = req.body;
   try {
@@ -57,7 +57,7 @@ export const registerUser = async (req, res) => {
       return res.status(400).json({ success: false, message: "User already exists" });
     }
 
-    // 🔹 Validate email & password
+    
     if (!validator.isEmail(email)) {
       return res.status(400).json({ success: false, message: "Invalid email format" });
     }
@@ -66,16 +66,16 @@ export const registerUser = async (req, res) => {
       return res.status(400).json({ success: false, message: "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, and one number" });
     }
 
-    // 🔹 Hash password
+    
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    // 🔹 Create user with empty tasks array
+    
     const newUser = new userModel({
       name,
       email,
       password: hashedPassword,
-      tasks: [] // Ensure new users have empty tasks initially
+      tasks: [] 
     });
 
     const user = await newUser.save();
@@ -92,4 +92,6 @@ export const registerUser = async (req, res) => {
     return res.status(500).json({ success: false, message: "Error during registration" });
   }
 };
+// npm uninstall bcrypt
+// npm install bcryptjs
 
