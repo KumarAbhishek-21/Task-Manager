@@ -1,13 +1,12 @@
 Task Manager Web Application
 
-*******Overview*******
+#Overview
 
 This is a Task Manager web application built using the MERN (MongoDB, Express.js, React, Node.js) stack. It allows users to manage their tasks efficiently, including adding, editing, marking as complete, and deleting tasks. Authentication ensures that tasks are user-specific, providing a personalized experience.
 
-Features
+***Features***
 
 User Authentication: Secure sign-up and login functionality.
-
 Task Management: Users can add, update, mark tasks as completed, and delete them.
 
 Search & Filter: Users can search for specific tasks easily.
