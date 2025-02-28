@@ -17,7 +17,7 @@ export const CreateTask = async (taskObj) => {
     try {
         const { data } = await axios.post(url, taskObj, {
             headers: { 
-                Authorization: `Bearer ${token}`, // Ensure token is included
+                Authorization: `Bearer ${token}`, 
                 "Content-Type": "application/json"
             }
         });
@@ -41,7 +41,7 @@ export const GetAllTasks = async () => {
     try {
         const { data } = await axios.get(url, {
             headers: { 
-                Authorization: `Bearer ${token}`, // Ensure token is sent correctly
+                Authorization: `Bearer ${token}`, 
                 "Content-Type": "application/json"
             }
         });
