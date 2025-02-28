@@ -7,6 +7,7 @@ This is a Task Manager web application built using the MERN (MongoDB, Express.js
 ## Features
 
 User Authentication: Secure sign-up and login functionality.
+
 Task Management: Users can add, update, mark tasks as completed, and delete them.
 
 Search & Filter: Users can search for specific tasks easily.
