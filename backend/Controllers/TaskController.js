@@ -4,7 +4,7 @@ import TaskModel from "../Models/TaskModel.js";
 
 export const createTask = async (req, res) => {
     const { taskName } = req.body;
-    const userId = req.user.id;  // Extract user ID from token
+    const userId = req.user.id; 
 
     try {
         const task = new TaskModel({ taskName, userId });
@@ -35,7 +35,7 @@ export const updateTaskById = async (req, res) => {
 
     try {
         const task = await TaskModel.findOneAndUpdate(
-            { _id: taskId, userId },  // Ensure task belongs to user
+            { _id: taskId, userId },  
             { $set: updateData },
             { new: true }
         );
