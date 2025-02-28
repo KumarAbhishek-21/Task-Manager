@@ -34,7 +34,7 @@ const StoreContextProvider = (props) =>{
             });
 
             if (response.data.success) {
-                setTasks(response.data.tasks); // Store user-specific tasks
+                setTasks(response.data.tasks);
             }
         } catch (error) {
             console.error("Error fetching tasks:", error);
