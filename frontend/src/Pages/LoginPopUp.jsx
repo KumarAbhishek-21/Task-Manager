@@ -24,9 +24,9 @@ const LoginPopUp = ({ setShowLogin }) => {
 
         let newUrl = url;
         if (currentState === "Login") {
-            newUrl += "/api/user/login";
+            newUrl += "/user/login";
         } else {
-            newUrl += "/api/user/register";
+            newUrl += "/user/register";
         }
 
         // console.log("Sending Data to API:", newUrl, data); // Debugging
