@@ -6,7 +6,7 @@ export const StoreContext = createContext(null)
 
 const StoreContextProvider = (props) =>{
     
-    const url = "https://task-manager-cxk8.onrender.com";
+    const url = "http://localhost:4000/api";
     const [token,setToken] = useState(localStorage.getItem("token") || "");
     const [user,setUser] = useState(JSON.parse(localStorage.getItem("user")) || null);
     const [tasks,setTasks] = useState([]);
