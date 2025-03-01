@@ -22,7 +22,6 @@ Backend: Node.js, Express.js, MongoDB, Mongoose
 
 Authentication: JWT (JSON Web Tokens)
 
-Hosting: Render (or any cloud platform for deployment)
 
 ## Project Workflow
 
